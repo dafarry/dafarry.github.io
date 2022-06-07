@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sine Wave</title>
+  <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+<py-env>
+  - matplotlib
+  - numpy
+</py-env>
+<py-script>
+import numpy as np
+import matplotlib.pyplot as plt
+t = np.linspace(-np.pi, np.pi, 1000)
+z = np.exp(1j * t) + 0.5 * np.exp(-3j * t) + 0.18 * np.exp(-11j * t)
+plt.plot(z.real, z.imag, 'r-')
+plt.gca().set_aspect('equal')
+plt
+</py-script>
+</body>
+</html>
